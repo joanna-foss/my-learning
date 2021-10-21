@@ -1,9 +1,5 @@
 "use strict";
 
-// $(window).on("load", function () {
-// 	$(".loader-wrapper").fadeOut("slow");
-// });
-
 let moviesAPI = 'https://wise-citrine-swordfish.glitch.me/movies'
 let OMDBapi = 'http://www.omdbapi.com/?i=tt3896198&apikey=' + OMDbAPIKey
 
@@ -12,7 +8,6 @@ fetch(moviesAPI).then(function (results) {
 		return resultsObject
 	})
 	.then((movies) => {
-		console.log(movies);
 		let html = '';
 
 		//GENERATE CARDS HERE
@@ -67,6 +62,8 @@ fetch(moviesAPI).then(function (results) {
 
 
 		});
+
+		$(".loader-wrapper").fadeOut("slow")
 
 		document.getElementById('movies').innerHTML = html;
 
