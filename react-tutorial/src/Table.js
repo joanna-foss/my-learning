@@ -11,16 +11,10 @@ const Tableheader = () => {
   )
 }
 
-const Tablebody = (props) => {
-    const rows = props.characters.map((row, index) => {
-        return (
-            <tr key ={index}>
-                <td>{row.name}</td>
-                <td>{row.job}</td>
-            </tr>
-        )
-    })
-    return <tbody>{rows}</tbody>
+const Tablebody = () => {
+  return (
+    <tbody />
+  )
 }
 
 class Table extends Component {
