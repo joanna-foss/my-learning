@@ -12,15 +12,14 @@ const Tableheader = () => {
 }
 
 const Tablebody = (props) => {
-    const rows = props.characterData.map((row, index) => {
+    const rows = props.characters.map((row, index) => {
         return (
-            <tr key={index}>
+            <tr key ={index}>
                 <td>{row.name}</td>
                 <td>{row.job}</td>
             </tr>
         )
     })
-
     return <tbody>{rows}</tbody>
 }
 

@@ -33,28 +33,11 @@ class App extends Component {
 	}
 
 	render() {
-		const characters = [
-			{
-				name: 'Charlie',
-				job: 'Janitor',
-			},
-			{
-				name: 'Mac',
-				job: 'Bouncer',
-			},
-			{
-				name: 'Dee',
-				job: 'Actress',
-			},
-			{
-				name: 'Dennis',
-				job: 'Bartender',
-			},
-		]
+		const characters = this.state
 
 		return (
 			<div className="container">
-				<Table characterData={characters} />
+				<Table characterData={characters} removeCharacter={this.removeCharacter}/>
 			</div>
 		)
 	}
