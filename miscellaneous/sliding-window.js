@@ -1,9 +1,9 @@
 //BRUTE FORCE METHOD O(n*k)
 const max_sub_array_of_size_k = function(k, arr) {
-    maxSum = -1;
+    let maxSum = -1;
     // windowSums = [];
     for(i=0;i<=arr.length-k;i++) {
-      windowSum = 0;
+      let windowSum = 0;
       for(j=i;j<i+k;j++){
           windowSum+=arr[j];
       }
@@ -17,13 +17,13 @@ const max_sub_array_of_size_k = function(k, arr) {
   console.log(max_sub_array_of_size_k(3, [1,5,2,3,4])); //10
   console.log(max_sub_array_of_size_k(5, [9,-3,2,22,-9,8,1,2])); //24
 
-  //SLIDING WINDOW METHOD O(n)
+  //OPTIMAL SOLUTION O(n)
   const max_sub_array_of_size_l = (l, arr) => {
-    maxSum = 0;
-    windowSum = 0;
-    windowStart = 0;
+    let maxSum = 0;
+    let windowSum = 0;
+    let windowStart = 0;
 
-    for(windowEnd = 0; windowEnd < arr.length; windowEnd++) {
+    for(let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
       windowSum += arr[windowEnd];
 
       if(windowEnd >= l-1) {
@@ -38,3 +38,27 @@ const max_sub_array_of_size_k = function(k, arr) {
 
   console.log(max_sub_array_of_size_l(3, [1,5,2,3,4])); //10
   console.log(max_sub_array_of_size_l(5, [9,-3,2,22,-9,8,1,2])); //24
+
+  //OPTIMAL SOLUTION
+  const smallest_subarray_length = (arr, target) => {
+    let smallest_length = Infinity;
+    let subarray_sum = 0;
+    let windowStart = 0;
+
+    for(let windowEnd = 0; windowEnd<arr.length; windowEnd++) {
+      subarray_sum += arr[windowEnd];
+      while(subarray_sum >= target) {
+        smallest_length = Math.min(smallest_length, windowEnd-windowStart + 1);
+        subarray_sum -= arr[windowStart];
+        windowStart += 1;
+      }
+    }
+    if (smallest_length === Infinity) {
+      return 0;
+    }
+    return smallest_length;
+  }
+
+  console.log(smallest_subarray_length([2, 1, 5, 2, 3, 2], 7)); //2
+  console.log(smallest_subarray_length([2, 1, 5, 2, 8], 7)) //1
+  console.log(smallest_subarray_length([3, 4, 1, 1, 6], 8)); //3
