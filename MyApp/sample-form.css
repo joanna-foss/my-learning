@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+}
+body {
+    width: 100%;
+    font-size: 1em;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.page {
+    max-width: 640px;
+    margin: auto;
+}
+
+.page div {
+    margin-bottom: 1.1em;
+}
+
+#header>p {
+    margin: 5px 0px;
+}
+
+#attorney-info>p {
+    margin: 2px 0px;
+}
+
+#document-title {
+    margin-top: 3em;
+    text-align: center;
+}
+
+#box {
+    display: flex;
+    justify-content: center;
+    height: auto;
+    width:100%;
+}
+
+#box-1 {
+    padding: 10px;
+    border: 1px solid black;
+    height: 8em;
+    width:50%;
+    text-align: left;
+}
+
+#box-1>p:nth-child(1){
+    margin-bottom: 2em;
+}
+
+#box-1>p:nth-child(3){
+    margin-bottom: 1.5em;
+}
+
+#box-2 {
+    padding: 10px;
+    width: 50%;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+#box-2>p:nth-child(1) {
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+}
+
+#box-2>p:nth-child(2) {
+    font-weight: bold;
+    text-align: center;
+}
+
+#text-section>* {
+    margin: .5em 0px;
+}
+
+#text-section>p:nth-child(2) {
+    text-indent: 3em;
+    text-align: justify;
+    line-height: 2.3em;
+}
+
+ol {
+    padding-left: 14px;
+}
+
+ol>li {
+    margin: 1.4em;
+    line-height: 1.3em;
+    text-align:justify;
+}
+
+#text-section>p:nth-child(6) {
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 3em;
+}
+
+#sig-blocks {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+}
+
+#sig-blocks div>p:nth-child(2) {
+    margin-bottom: 2em;
+}
+
+@page {
+    size: letter portrait;
+    margin: 96px;
+}
