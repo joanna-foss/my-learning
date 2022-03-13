@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ExportToJubilee ExportType="ExportCase">
+  <tables>
+    <table Name="dbDataDir\General3.DAT.DAT" DBISAMVersion="3.00" StructureVersion="1.31" TableType="CaseGeneralRecord">
+      <structure>
+        <fieldDef Name="Id" Type="ftInteger"/>
+        <fieldDef Name="Debtor" Type="ftString" Size="102"/>
+        <fieldDef Name="Debtor Sign" Type="ftString" Size="102"/>
+        <fieldDef Name="Spouse" Type="ftString" Size="40"/>
+        <fieldDef Name="Spouse Sign" Type="ftString" Size="40"/>
+        <fieldDef Name="Corporate Sign" Type="ftString" Size="40"/>
+        <fieldDef Name="Corporate Title" Type="ftString" Size="40"/>
+        <fieldDef Name="Debtor SSN" Type="ftString" Size="14"/>
+        <fieldDef Name="Spouse SSN" Type="ftString" Size="14"/>
+        <fieldDef Name="Debtor Alias" Type="ftString" Size="200"/>
+        <fieldDef Name="Spouse Alias" Type="ftString" Size="200"/>
+        <fieldDef Name="Debtor Address 1" Type="ftString" Size="40"/>
+        <fieldDef Name="Debtor Address 2" Type="ftString" Size="40"/>
+        <fieldDef Name="Debtor Address 3" Type="ftString" Size="40"/>
+        <fieldDef Name="Debtor Address 4" Type="ftString" Size="40"/>
+        <fieldDef Name="Spouse Address 1" Type="ftString" Size="40"/>
+        <fieldDef Name="Spouse Address 2" Type="ftString" Size="40"/>
+        <fieldDef Name="Spouse Address 3" Type="ftString" Size="40"/>
+        <fieldDef Name="Spouse Address 4" Type="ftString" Size="40"/>
+        <fieldDef Name="Debtor County" Type="ftString" Size="30"/>
+        <fieldDef Name="Spouse County" Type="ftString" Size="30"/>
+        <fieldDef Name="Debtor Mail Address 1" Type="ftString" Size="40"/>
+        <fieldDef Name="Debtor Mail Address 2" Type="ftString" Size="40"/>
+        <fieldDef Name="Debtor Mail Address 3" Type="ftString" Size="40"/>
+        <fieldDef Name="Debtor Mail Address 4" Type="ftString" Size="40"/>
+        <fieldDef Name="Spouse Mail Address 1" Type="ftString" Size="40"/>
+        <fieldDef Name="Spouse Mail Address 2" Type="ftString" Size="40"/>
+        <fieldDef Name="Spouse Mail Address 3" Type="ftString" Size="40"/>
+        <fieldDef Name="Spouse Mail Address 4" Type="ftString" Size="40"/>
+        <fieldDef Name="Location of Assets" Type="ftString" Size="200"/>
+        <fieldDef Name="Type of Debtor" Type="ftSmallint"/>
+        <fieldDef Name="Nature of Debtor Buss" Type="ftString" Size="50"/>
+        <fieldDef Name="Type of Business" Type="ftSmallint"/>
+        <fieldDef Name="In-House Number" Type="ftString" Size="20"/>
+        <fieldDef Name="Case Number" Type="ftString" Size="20"/>
+        <fieldDef Name="Chapter" Type="ftString" Size="2"/>
+        <fieldDef Name="Filing Fee Attached" Type="ftBoolean"/>
+        <fieldDef Name="Designated Attorney" Type="ftString" Size="40"/>
+        <fieldDef Name="Funds Available to U4" Type="ftBoolean"/>
+        <fieldDef Name="Prior Bankruptcy Local" Type="ftString" Size="100"/>
+        <fieldDef Name="Prior Bankruptcy Number" Type="ftString" Size="15"/>
+        <fieldDef Name="Prior Bankruptcy Date" Type="ftDate"/>
+        <fieldDef Name="Prior Bankruptcy Local 2" Type="ftString" Size="100"/>
+        <fieldDef Name="Prior Bankruptcy Number 2" Type="ftString" Size="15"/>
+        <fieldDef Name="Prior Bankruptcy Date 2" Type="ftDate"/>
+        <fieldDef Name="Pending Bankruptcy Debtor" Type="ftString" Size="40"/>
+        <fieldDef Name="Pending Bankruptcy Number" Type="ftString" Size="15"/>
+        <fieldDef Name="Pending Bankruptcy Date" Type="ftDate"/>
+        <fieldDef Name="Pending BK Relationship" Type="ftString" Size="30"/>
+        <fieldDef Name="Pending BK District" Type="ftString" Size="40"/>
+        <fieldDef Name="Pending BK Judge" Type="ftString" Size="30"/>
+        <fieldDef Name="Attorney Bar Id" Type="ftString" Size="25"/>
+        <fieldDef Name="Disclosure Amount Paid" Type="ftCurrency"/>
+        <fieldDef Name="Disclosure To Be Paid" Type="ftCurrency"/>
+        <fieldDef Name="Disclosure in Plan" Type="ftCurrency"/>
+        <fieldDef Name="Property Given To Atty" Type="ftString" Size="50"/>
+        <fieldDef Name="Collateral Held By Atty" Type="ftString" Size="50"/>
+        <fieldDef Name="Source of Compensation" Type="ftString" Size="100"/>
+        <fieldDef Name="Fees Added to Creds" Type="ftBoolean"/>
+        <fieldDef Name="Fees Added to SOFA 9" Type="ftBoolean"/>
+        <fieldDef Name="Home Phone" Type="ftString" Size="14"/>
+        <fieldDef Name="Debtor Work Phone" Type="ftString" Size="14"/>
+        <fieldDef Name="Spouse Work Phone" Type="ftString" Size="14"/>
+        <fieldDef Name="Other Phone" Type="ftString" Size="14"/>
+        <fieldDef Name="Debtor Work Ext" Type="ftString" Size="6"/>
+        <fieldDef Name="Spouse Work Ext" Type="ftString" Size="6"/>
+        <fieldDef Name="Other Ext" Type="ftString" Size="6"/>
+        <fieldDef Name="Trustee Id" Type="ftInteger"/>
+        <fieldDef Name="Trustee" Type="ftString" Size="40"/>
+        <fieldDef Name="Trustee Address 1" Type="ftString" Size="40"/>
+        <fieldDef Name="Trustee Address 2" Type="ftString" Size="40"/>
+        <fieldDef Name="Trustee Address 3" Type="ftString" Size="40"/>
+        <fieldDef Name="Trustee Address 4" Type="ftString" Size="40"/>
+        <fieldDef Name="Trustee Phone" Type="ftString" Size="15"/>
+        <fieldDef Name="Date Filed" Type="ftDate"/>
+        <fieldDef Name="Date Discharged" Type="ftDate"/>
+        <fieldDef Name="Nature of Debt" Type="ftBoolean"/>
+        <fieldDef Name="Debtor SSN 2" Type="ftString" Size="14"/>
+        <fieldDef Name="Spouse SSN 2" Type="ftString" Size="14"/>
+        <fieldDef Name="Debtor Sex" Type="ftString" Size="1"/>
+        <fieldDef Name="Separate Households" Type="ftBoolean"/>
+        <fieldDef Name="Married" Type="ftBoolean"/>
+        <fieldDef Name="Greater Part of 180 Days" Type="ftBoolean"/>
+        <fieldDef Name="No Employees" Type="ftInteger"/>
+        <fieldDef Name="No Holders" Type="ftInteger"/>
+        <fieldDef Name="Date of First 341" Type="ftDate"/>
+        <fieldDef Name="Data Version" Type="ftInteger"/>
+        <fieldDef Name="Zip Code" Type="ftString" Size="15"/>
+        <fieldDef Name="Married Status" Type="ftString" Size="30"/>
+        <fieldDef Name="Debtor Date of Birth" Type="ftDate"/>
+        <fieldDef Name="Debtor Drivers License No" Type="ftString" Size="15"/>
+        <fieldDef Name="Debtor Drivers License St" Type="ftString" Size="2"/>
+        <fieldDef Name="Spouse Date of Birth" Type="ftDate"/>
+        <fieldDef Name="Spouse Drivers License No" Type="ftString" Size="15"/>
+        <fieldDef Name="Spouse Drivers License St" Type="ftString" Size="2"/>
+        <fieldDef Name="Debtor Address Current" Type="ftBoolean"/>
+        <fieldDef Name="Spouse Address Current" Type="ftBoolean"/>
+        <fieldDef Name="Has Message Machine" Type="ftBoolean"/>
+        <fieldDef Name="OK to call at work" Type="ftBoolean"/>
+        <fieldDef Name="Other Phone Type" Type="ftString" Size="10"/>
+        <fieldDef Name="StateExemptScheme" Type="ftString" Size="10"/>
+        <fieldDef Name="JurisID" Type="ftInteger"/>
+        <fieldDef Name="Trustee Payment Address 1" Type="ftString" Size="40"/>
+        <fieldDef Name="Trustee Payment Address 2" Type="ftString" Size="40"/>
+        <fieldDef Name="Trustee Payment Address 3" Type="ftString" Size="40"/>
+        <fieldDef Name="Trustee Payment Address 4" Type="ftString" Size="40"/>
+        <fieldDef Name="Trustee Fax" Type="ftString" Size="15"/>
+        <fieldDef Name="Judge" Type="ftString" Size="40"/>
+        <fieldDef Name="Keywords" Type="ftString" Size="60"/>
+        <fieldDef Name="APClientID" Type="ftString" Size="7"/>
+        <fieldDef Name="DisclosureTotalFees" Type="ftCurrency"/>
+        <fieldDef Name="DisclosureFilingFeesPaidByFirm" Type="ftCurrency"/>
+        <fieldDef Name="USTrusteeID" Type="ftInteger"/>
+        <fieldDef Name="NotRepresentedByAtty" Type="ftBoolean"/>
+        <fieldDef Name="IsActive" Type="ftBoolean"/>
+        <fieldDef Name="Spouse OK to call at work" Type="ftBoolean"/>
+        <fieldDef Name="DebtorCellPhone" Type="ftString" Size="14"/>
+        <fieldDef Name="SpouseCellPhone" Type="ftString" Size="14"/>
+        <fieldDef Name="JurisCode" Type="ftString" Size="4"/>
+        <fieldDef Name="SimpleCaseNo" Type="ftString" Size="8"/>
+        <fieldDef Name="TypeOfDebtorDesc" Type="ftString" Size="40"/>
+        <fieldDef Name="IsHealthCareBusiness" Type="ftBoolean"/>
+        <fieldDef Name="IsSingleAssetRealEstate" Type="ftBoolean"/>
+        <fieldDef Name="IsRailroad" Type="ftBoolean"/>
+        <fieldDef Name="IsStockbroker" Type="ftBoolean"/>
+        <fieldDef Name="IsCommodityBroker" Type="ftBoolean"/>
+        <fieldDef Name="IsClearingBank" Type="ftBoolean"/>
+        <fieldDef Name="IsNonProfitOrg" Type="ftBoolean"/>
+        <fieldDef Name="DebtCounselingReceived" Type="ftBoolean"/>
+        <fieldDef Name="DebtCounselingWaiverRequest" Type="ftBoolean"/>
+        <fieldDef Name="NonInsidersLessThan2Million" Type="ftBoolean"/>
+        <fieldDef Name="FilingFeeOption" Type="ftString" Size="1"/>
+        <fieldDef Name="DebtorEMail" Type="ftMemo"/>
+        <fieldDef Name="SpouseEMail" Type="ftMemo"/>
+        <fieldDef Name="IsOtherTypeOfBusiness" Type="ftBoolean"/>
+        <fieldDef Name="IsTaxExemptEntity" Type="ftBoolean"/>
+        <fieldDef Name="IsChap11PlanAttached" Type="ftBoolean"/>
+        <fieldDef Name="WasChap11PlanPresentedToCreds" Type="ftBoolean"/>
+        <fieldDef Name="DebtorExhDAttached" Type="ftBoolean"/>
+        <fieldDef Name="DebtorExhDCertAttached" Type="ftBoolean"/>
+        <fieldDef Name="DebtorExhDCertNotAttached" Type="ftBoolean"/>
+        <fieldDef Name="DebtorExhDTempWaiverReq" Type="ftBoolean"/>
+        <fieldDef Name="DebtorExhDExigentCircumstances" Type="ftMemo"/>
+        <fieldDef Name="DebtorExhDNotRequiredDueTo" Type="ftBoolean"/>
+        <fieldDef Name="DebtorExhDIncapacity" Type="ftBoolean"/>
+        <fieldDef Name="DebtorExhDDisability" Type="ftBoolean"/>
+        <fieldDef Name="DebtorExhDActiveDuty" Type="ftBoolean"/>
+        <fieldDef Name="DebtorExhDNotRequiredInDist" Type="ftBoolean"/>
+        <fieldDef Name="SpouseExhDAttached" Type="ftBoolean"/>
+        <fieldDef Name="SpouseExhDCertAttached" Type="ftBoolean"/>
+        <fieldDef Name="SpouseExhDCertNotAttached" Type="ftBoolean"/>
+        <fieldDef Name="SpouseExhDTempWaiverReq" Type="ftBoolean"/>
+        <fieldDef Name="SpouseExhDExigentCircumstances" Type="ftMemo"/>
+        <fieldDef Name="SpouseExhDNotRequiredDueTo" Type="ftBoolean"/>
+        <fieldDef Name="SpouseExhDIncapacity" Type="ftBoolean"/>
+        <fieldDef Name="SpouseExhDDisability" Type="ftBoolean"/>
+        <fieldDef Name="SpouseExhDActiveDuty" Type="ftBoolean"/>
+        <fieldDef Name="SpouseExhDNotRequiredInDist" Type="ftBoolean"/>
+        <fieldDef Name="ForceSpouseToPrintOnSchI" Type="ftBoolean"/>
+        <fieldDef Name="CaseColorScheme" Type="ftSmallint"/>
+        <fieldDef Name="SFTDebtorID" Type="ftInteger"/>
+        <fieldDef Name="UseFormsAsOf" Type="ftDate"/>
+        <fieldDef Name="DebtorFName" Type="ftString" Size="20"/>
+        <fieldDef Name="DebtorMName" Type="ftString" Size="25"/>
+        <fieldDef Name="DebtorLName" Type="ftString" Size="102"/>
+        <fieldDef Name="DebtorTitle" Type="ftString" Size="20"/>
+        <fieldDef Name="DebtorGen" Type="ftString" Size="5"/>
+        <fieldDef Name="DebtorUseNewNameFields" Type="ftBoolean"/>
+        <fieldDef Name="SpouseFName" Type="ftString" Size="20"/>
+        <fieldDef Name="SpouseMName" Type="ftString" Size="25"/>
+        <fieldDef Name="SpouseLName" Type="ftString" Size="102"/>
+        <fieldDef Name="SpouseTitle" Type="ftString" Size="20"/>
+        <fieldDef Name="SpouseGen" Type="ftString" Size="5"/>
+        <fieldDef Name="SpouseUseNewNameFields" Type="ftBoolean"/>
+        <fieldDef Name="SimpleCaseType" Type="ftString" Size="2"/>
+        <fieldDef Name="DebtorCountyCode" Type="ftString" Size="5"/>
+        <fieldDef Name="SpouseCountyCode" Type="ftString" Size="5"/>
+        <fieldDef Name="Prior Bankruptcy Local 3" Type="ftString" Size="100"/>
+        <fieldDef Name="Prior Bankruptcy Number 3" Type="ftString" Size="15"/>
+        <fieldDef Name="Prior Bankruptcy Date 3" Type="ftDate"/>
+        <fieldDef Name="Pending Bankruptcy Debtor 2" Type="ftString" Size="40"/>
+        <fieldDef Name="Pending Bankruptcy Number 2" Type="ftString" Size="15"/>
+        <fieldDef Name="Pending Bankruptcy Date 2" Type="ftDate"/>
+        <fieldDef Name="Pending BK Relationship 2" Type="ftString" Size="30"/>
+        <fieldDef Name="Pending BK District 2" Type="ftString" Size="40"/>
+        <fieldDef Name="Pending BK Judge 2" Type="ftString" Size="30"/>
+        <fieldDef Name="DebtsArePrimarily" Type="ftString" Size="1"/>
+        <fieldDef Name="DebtsArePrimarilyOtherDesc" Type="ftMemo"/>
+        <fieldDef Name="HasSoleProprietorship" Type="ftBoolean"/>
+        <fieldDef Name="IsInvestmentCompany" Type="ftBoolean"/>
+        <fieldDef Name="IsInvestmentAdvisor" Type="ftBoolean"/>
+        <fieldDef Name="IsShellCompany" Type="ftBoolean"/>
+        <fieldDef Name="NAICS" Type="ftString" Size="6"/>
+        <fieldDef Name="WebsiteURL" Type="ftMemo"/>
+        <fieldDef Name="SoleProprietorshipName" Type="ftString" Size="40"/>
+        <fieldDef Name="SoleProprietorshipAddr" Type="ftMemo"/>
+        <fieldDef Name="IsReqToFilePeriodicReports" Type="ftBoolean"/>
+        <fieldDef Name="DebtorExhDCompletionDate" Type="ftDate"/>
+        <fieldDef Name="SpouseExhDCompletionDate" Type="ftDate"/>
+        <fieldDef Name="JubileeCaseID" Type="ftInteger"/>
+        <fieldDef Name="CorporateEMail" Type="ftMemo"/>
+      </structure>
+      <data>
+        <record>
+          <field Name="Id" Value="1018"/>
+          <field Name="Debtor" Value="Debtor, John Quincy"/>
+          <field Name="Debtor Sign" Value="John Quincy Debtor"/>
+          <field Name="Spouse" Value="Debtor, Ann"/>
+          <field Name="Spouse Sign" Value="Ann Debtor"/>
+          <field Name="Corporate Sign" Value="Joe Signer"/>
+          <field Name="Corporate Title" Value="CEO"/>
+          <field Name="Debtor SSN" Value="123-45-6789"/>
+          <field Name="Spouse SSN" Value="234-56-7890"/>
+          <field Name="Debtor Address 1" Value="1111 Aerie Way"/>
+          <field Name="Debtor Address 2" Value="Apt. 222"/>
+          <field Name="Debtor Address 3" Value="San Antonio, TX 78201"/>
+          <field Name="Spouse Address 1" Value="1111 Aerie Way"/>
+          <field Name="Spouse Address 2" Value="Apt. 222"/>
+          <field Name="Spouse Address 3" Value="San Antonio, TX 78201"/>
+          <field Name="Debtor County" Value="Bexar"/>
+          <field Name="Spouse County" Value="Bexar"/>
+          <field Name="Debtor Mail Address 1" Value="1111 Aerie Way"/>
+          <field Name="Debtor Mail Address 2" Value="Apt. 222"/>
+          <field Name="Debtor Mail Address 3" Value="San Antonio, TX 78201"/>
+          <field Name="Spouse Mail Address 1" Value="1111 Aerie Way"/>
+          <field Name="Spouse Mail Address 2" Value="Apt. 222"/>
+          <field Name="Spouse Mail Address 3" Value="San Antonio, TX 78201"/>
+          <field Name="Location of Assets" Value="1234 N. Main&#xA;San Antonio, TX 78216"/>
+          <field Name="Type of Debtor" Value="2"/>
+          <field Name="In-House Number" Value="11013"/>
+          <field Name="Chapter" Value="13"/>
+          <field Name="Filing Fee Attached" Value="true"/>
+          <field Name="Designated Attorney" Value="Joe Attorney"/>
+          <field Name="Funds Available to U4" Value="true"/>
+          <field Name="Prior Bankruptcy Local" Value="Northern District of Texas"/>
+          <field Name="Prior Bankruptcy Number" Value="08-11111"/>
+          <field Name="Prior Bankruptcy Date" Value="2/28/2008"/>
+          <field Name="Prior Bankruptcy Local 2" Value="Southern District of Texas"/>
+          <field Name="Prior Bankruptcy Number 2" Value="07-11111"/>
+          <field Name="Prior Bankruptcy Date 2" Value="2/28/2007"/>
+          <field Name="Pending Bankruptcy Debtor" Value="Joe Debtor"/>
+          <field Name="Pending Bankruptcy Number" Value="13-11111"/>
+          <field Name="Pending Bankruptcy Date" Value="1/1/2013"/>
+          <field Name="Pending BK Relationship" Value="Husband"/>
+          <field Name="Pending BK District" Value="Western District of Washington"/>
+          <field Name="Pending BK Judge" Value="Joe Judge"/>
+          <field Name="Attorney Bar Id" Value="12341234"/>
+          <field Name="Disclosure Amount Paid" Value="100"/>
+          <field Name="Disclosure in Plan" Value="1400"/>
+          <field Name="Source of Compensation" Value="Current wages"/>
+          <field Name="Fees Added to Creds" Value="true"/>
+          <field Name="Fees Added to SOFA 9" Value="true"/>
+          <field Name="Home Phone" Value="(210) 777-7777"/>
+          <field Name="Debtor Work Phone" Value="(210) 222-2222"/>
+          <field Name="Spouse Work Phone" Value="(210) 333-3333"/>
+          <field Name="Other Phone" Value="(210) 444-4444"/>
+          <field Name="Trustee Id" Value="0"/>
+          <field Name="Nature of Debt" Value="true"/>
+          <field Name="Debtor SSN 2" Value="44-4444444"/>
+          <field Name="Spouse SSN 2" Value="987-70-1234"/>
+          <field Name="Debtor Sex" Value="M"/>
+          <field Name="Separate Households" Value="true"/>
+          <field Name="Married" Value="true"/>
+          <field Name="Greater Part of 180 Days" Value="true"/>
+          <field Name="No Employees" Value="0"/>
+          <field Name="No Holders" Value="0"/>
+          <field Name="Data Version" Value="25"/>
+          <field Name="Zip Code" Value="78201"/>
+          <field Name="Married Status" Value="Married"/>
+          <field Name="Debtor Date of Birth" Value="4/9/1956"/>
+          <field Name="Spouse Date of Birth" Value="11/19/1951"/>
+          <field Name="Has Message Machine" Value="false"/>
+          <field Name="OK to call at work" Value="false"/>
+          <field Name="StateExemptScheme" Value="SX1101"/>
+          <field Name="JurisID" Value="4"/>
+          <field Name="DisclosureTotalFees" Value="1500"/>
+          <field Name="USTrusteeID" Value="0"/>
+          <field Name="NotRepresentedByAtty" Value="false"/>
+          <field Name="IsActive" Value="true"/>
+          <field Name="Spouse OK to call at work" Value="false"/>
+          <field Name="DebtorCellPhone" Value="(210) 555-5555"/>
+          <field Name="SpouseCellPhone" Value="(210) 666-6666"/>
+          <field Name="JurisCode" Value="TXWB"/>
+          <field Name="IsHealthCareBusiness" Value="false"/>
+          <field Name="IsSingleAssetRealEstate" Value="false"/>
+          <field Name="IsRailroad" Value="false"/>
+          <field Name="IsStockbroker" Value="false"/>
+          <field Name="IsCommodityBroker" Value="false"/>
+          <field Name="IsClearingBank" Value="false"/>
+          <field Name="IsNonProfitOrg" Value="false"/>
+          <field Name="IsOtherTypeOfBusiness" Value="true"/>
+          <field Name="NonInsidersLessThan2Million" Value="true"/>
+          <field Name="DebtCounselingReceived" Value="false"/>
+          <field Name="DebtCounselingWaiverRequest" Value="false"/>
+          <field Name="FilingFeeOption" Value="A"/>
+          <field Name="DebtorEMail">
+            <![CDATA[cmljaEBsZWdhbC1wcm8uY29t]]>
+          </field>
+          <field Name="SpouseEMail">
+            <![CDATA[UmljaFdhbGtlclJGV0BnbWFpbC5jb20=]]>
+          </field>
+          <field Name="IsTaxExemptEntity" Value="false"/>
+          <field Name="IsChap11PlanAttached" Value="true"/>
+          <field Name="WasChap11PlanPresentedToCreds" Value="true"/>
+          <field Name="DebtorExhDAttached" Value="true"/>
+          <field Name="DebtorExhDCertAttached" Value="true"/>
+          <field Name="DebtorExhDCertNotAttached" Value="false"/>
+          <field Name="DebtorExhDTempWaiverReq" Value="false"/>
+          <field Name="DebtorExhDExigentCircumstances">
+            <![CDATA[VGhlc2UgYXJlIHRoZSBleGlnZW50IGNpcmN1bXN0YW5jZXMgZm9yIERlYnRvciAxLg==]]>
+          </field>
+          <field Name="DebtorExhDNotRequiredDueTo" Value="false"/>
+          <field Name="DebtorExhDIncapacity" Value="false"/>
+          <field Name="DebtorExhDDisability" Value="false"/>
+          <field Name="DebtorExhDActiveDuty" Value="false"/>
+          <field Name="DebtorExhDNotRequiredInDist" Value="false"/>
+          <field Name="SpouseExhDAttached" Value="true"/>
+          <field Name="SpouseExhDCertAttached" Value="true"/>
+          <field Name="SpouseExhDCertNotAttached" Value="false"/>
+          <field Name="SpouseExhDTempWaiverReq" Value="false"/>
+          <field Name="SpouseExhDExigentCircumstances">
+            <![CDATA[VGhlc2UgYXJlIHRoZSBleGlnZW50IGNpcmN1bXN0YW5jZXMgZm9yIERlYnRvciAyLg==]]>
+          </field>
+          <field Name="SpouseExhDNotRequiredDueTo" Value="false"/>
+          <field Name="SpouseExhDIncapacity" Value="false"/>
+          <field Name="SpouseExhDDisability" Value="false"/>
+          <field Name="SpouseExhDActiveDuty" Value="false"/>
+          <field Name="SpouseExhDNotRequiredInDist" Value="false"/>
+          <field Name="ForceSpouseToPrintOnSchI" Value="false"/>
+          <field Name="DebtorFName" Value="John"/>
+          <field Name="DebtorMName" Value="Quincy"/>
+          <field Name="DebtorLName" Value="Debtor"/>
+          <field Name="DebtorUseNewNameFields" Value="true"/>
+          <field Name="SpouseFName" Value="Ann"/>
+          <field Name="SpouseLName" Value="Debtor"/>
+          <field Name="SpouseUseNewNameFields" Value="true"/>
+          <field Name="DebtorCountyCode" Value="48029"/>
+          <field Name="SpouseCountyCode" Value="48029"/>
+          <field Name="Prior Bankruptcy Local 3" Value="Eastern District of Texas"/>
+          <field Name="Prior Bankruptcy Number 3" Value="06-11111"/>
+          <field Name="Prior Bankruptcy Date 3" Value="2/28/2006"/>
+          <field Name="Pending Bankruptcy Debtor 2" Value="John Debtor"/>
+          <field Name="Pending Bankruptcy Number 2" Value="14-11111"/>
+          <field Name="Pending Bankruptcy Date 2" Value="2/2/2014"/>
+          <field Name="Pending BK Relationship 2" Value="Brother"/>
+          <field Name="Pending BK District 2" Value="Eastern District of Washington"/>
+          <field Name="Pending BK Judge 2" Value="John Judge"/>
+          <field Name="DebtsArePrimarily" Value="c"/>
+          <field Name="DebtsArePrimarilyOtherDesc">
+            <![CDATA[TWVkaWNhbA==]]>
+          </field>
+          <field Name="HasSoleProprietorship" Value="true"/>
+          <field Name="IsInvestmentCompany" Value="false"/>
+          <field Name="IsInvestmentAdvisor" Value="false"/>
+          <field Name="IsShellCompany" Value="false"/>
+          <field Name="SoleProprietorshipName" Value="Joe's Window Washing Services"/>
+          <field Name="SoleProprietorshipAddr">
+            <![CDATA[MTExIFdpbmRvdyBXYXNoaW5nIFJkLg0KU3VpdGUgMjIyDQpTYW4gQW50b25pbywgVFggNzgyMDE=]]>
+          </field>
+          <field Name="IsReqToFilePeriodicReports" Value="false"/>
+          <field Name="DebtorExhDCompletionDate" Value="12/15/2019"/>
+          <field Name="SpouseExhDCompletionDate" Value="12/1/2019"/>
+          <field Name="JubileeCaseID" Value="19903"/>
+        </record>
+      </data>
+    </table>
+    <table>
+      <structure>
+        <fieldDef Name="PK" Type="ftAutoInc"/>
+        <fieldDef Name="Name" Type="ftString" Size="40"/>
+        <fieldDef Name="Addr1" Type="ftString" Size="40"/>
+        <fieldDef Name="Addr2" Type="ftString" Size="40"/>
+        <fieldDef Name="Addr3" Type="ftString" Size="40"/>
+        <fieldDef Name="Addr4" Type="ftString" Size="40"/>
+        <fieldDef Name="ClassOfSecurity" Type="ftString" Size="40"/>
+        <fieldDef Name="NumberRegistered" Type="ftString" Size="40"/>
+        <fieldDef Name="KindOfInterest" Type="ftString" Size="40"/>
+        <fieldDef Name="EqSecHolderGUID" Type="ftString" Size="22"/>
+      </structure>
+      <data/>
+    </table>
+  </tables>
+</ExportToJubilee>

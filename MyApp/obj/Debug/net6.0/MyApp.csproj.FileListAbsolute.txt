@@ -1,0 +1,15 @@
+/Users/joannafoss/IdeaProjects/my-learning/MyApp/bin/Debug/net6.0/MyApp
+/Users/joannafoss/IdeaProjects/my-learning/MyApp/bin/Debug/net6.0/MyApp.deps.json
+/Users/joannafoss/IdeaProjects/my-learning/MyApp/bin/Debug/net6.0/MyApp.runtimeconfig.json
+/Users/joannafoss/IdeaProjects/my-learning/MyApp/bin/Debug/net6.0/MyApp.dll
+/Users/joannafoss/IdeaProjects/my-learning/MyApp/bin/Debug/net6.0/MyApp.pdb
+/Users/joannafoss/IdeaProjects/my-learning/MyApp/obj/Debug/net6.0/MyApp.csproj.AssemblyReference.cache
+/Users/joannafoss/IdeaProjects/my-learning/MyApp/obj/Debug/net6.0/MyApp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/joannafoss/IdeaProjects/my-learning/MyApp/obj/Debug/net6.0/MyApp.AssemblyInfoInputs.cache
+/Users/joannafoss/IdeaProjects/my-learning/MyApp/obj/Debug/net6.0/MyApp.AssemblyInfo.cs
+/Users/joannafoss/IdeaProjects/my-learning/MyApp/obj/Debug/net6.0/MyApp.csproj.CoreCompileInputs.cache
+/Users/joannafoss/IdeaProjects/my-learning/MyApp/obj/Debug/net6.0/MyApp.dll
+/Users/joannafoss/IdeaProjects/my-learning/MyApp/obj/Debug/net6.0/refint/MyApp.dll
+/Users/joannafoss/IdeaProjects/my-learning/MyApp/obj/Debug/net6.0/MyApp.pdb
+/Users/joannafoss/IdeaProjects/my-learning/MyApp/obj/Debug/net6.0/MyApp.genruntimeconfig.cache
+/Users/joannafoss/IdeaProjects/my-learning/MyApp/obj/Debug/net6.0/ref/MyApp.dll
