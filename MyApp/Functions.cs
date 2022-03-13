@@ -10,11 +10,12 @@ namespace Classes
         {
             XElement xelement = XElement.Load(filePath);
             Debtor currentDebtor = new Debtor();
-
-            foreach (XElement element in xelement.Descendants("field"))
+            
+            try
             {
-                try
+                foreach (XElement element in xelement.Descendants("field"))
                 {
+
                     if ((string)element.Attribute("Name") == "Debtor")
                     {
                         string value = (string)element.Attribute("Value");
@@ -128,10 +129,10 @@ namespace Classes
                         }
                     }
                 }
-                catch (NullReferenceException e)
-                {
-                    Console.WriteLine(e);
-                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
             }
 
             return currentDebtor;
