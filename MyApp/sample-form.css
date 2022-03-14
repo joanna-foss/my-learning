@@ -1,14 +1,17 @@
 * {
     margin: 0;
+    page-break-inside: auto;
 }
+
 body {
-    width: 100%;
     font-size: 1em;
     font-family:'Times New Roman', Times, serif;
+    box-sizing: border-box;
 }
 
 .page {
-    max-width: 640px;
+    max-width: 650px;
+    padding: 25mm;
     margin: auto;
 }
 
@@ -81,7 +84,7 @@ body {
 }
 
 ol {
-    padding-left: 14px;
+    padding-left: 13px;
 }
 
 ol>li {
@@ -106,7 +109,11 @@ ol>li {
     margin-bottom: 2em;
 }
 
-@page {
-    size: letter portrait;
-    margin: 96px;
+@media print{   
+    li {
+        break-inside: avoid;
+    }
+    #text-section ol:nth-child(1) div {
+        height: 1in;
+    }
 }
