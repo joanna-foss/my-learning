@@ -10,7 +10,6 @@ context.fillRect(0,0, canvas.width, canvas.height);
 const gravity = 0.6;
 
 class Sprite {
-    //pass in object hack to not require either position nor velocity for constructor to work as intended
     constructor({position, velocity, color = 'white', offset}) {
         this.position = position;
         this.velocity = velocity;
