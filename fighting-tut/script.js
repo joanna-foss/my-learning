@@ -26,7 +26,8 @@ class Sprite {
             height: 30
         };
         this.color = color;
-        this.isAttacking
+        this.isAttacking;
+        this.health = 100;
     }
 
     draw() {
@@ -123,6 +124,15 @@ const keys = {
     }
 }
 
+let timer = 5;
+function decrementTimer() {
+    if(timer > 0) {
+        setTimeout(decrementTimer, 1000);
+        timer--;
+        document.querySelector("#timer").innerHTML = timer;
+    }
+}
+
 function weaponCollision({character1,character2}) {
     return (
         character1.weapon.position.x + character1.weapon.width >= character2.position.x &&
@@ -163,12 +173,18 @@ function animate() {
         player.isAttacking) {
             player.isAttacking = false;
             console.log("player hit enemy!");
+            enemy.health -= 10;
+            let enemy_health = document.querySelector("#enemy-life-bar");
+            enemy_health.style.width = enemy.health + "%";
     } 
     if(
         weaponCollision({character1: enemy, character2: player}) &&
         enemy.isAttacking) {
             enemy.isAttacking = false;
             console.log("enemy hit player!");
+            player.health -= 10;
+            let player_health = document.querySelector("#player-life-bar");
+            player_health.style.width = player.health + "%";
     } 
 }
 
