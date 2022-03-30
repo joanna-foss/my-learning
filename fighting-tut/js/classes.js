@@ -11,20 +11,45 @@ class Background {
 }
 
 class Sprite {
-    constructor({position, img_src}) {
+    constructor({position, img_src, width, height, scale = 1, frames = 1}) {
         this.position = position;
-        this.height = 150;
-        this.width = 50;
+        this.height = height;
+        this.width = width;
         this.img = new Image();
         this.img.src = img_src;
+        this.scale = scale;
+        this.frames = frames;
+        this.frameCurrent = 0;
+        this.framesElapsed = 0;
+        this.framesHold = 6;
     }
 
     draw() {
-        context.drawImage(this.img, this.position.x, this.position.y);
+        context.drawImage(
+            this.img,
+            this.frameCurrent * (this.img.width / this.frames),
+            0,
+            this.img.width / this.frames,
+            this.img.height,
+            this.position.x,
+            this.position.y,
+            (this.img.width / this.frames) * this.scale,
+            this.img.height * this.scale
+        )
     }
 
     update() {
         this.draw();
+        this.framesElapsed++
+
+        if (this.framesElapsed % this.framesHold === 0) {
+            if (this.frameCurrent < this.frames - 1) {
+                this.frameCurrent++;
+            } else {
+                this.frameCurrent = 0;
+            }
+        }
+
     }
 }
 

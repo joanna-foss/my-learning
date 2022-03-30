@@ -41,6 +41,7 @@ function animate() {
     background1.createBackground();
     background2.createBackground();
     background3.createBackground();
+    shop.update();
     player.update();
     enemy.update();
 

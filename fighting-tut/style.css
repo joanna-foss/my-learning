@@ -5,6 +5,7 @@
 .container {
     position: relative;
     display: inline-block;
+    margin: auto;
 }
 
 #health-bars {
@@ -69,4 +70,18 @@
 #enemy-hit-bar {
     background-color: orange;
     height: 40px;
+}
+
+#winner {
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: xx-large;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
 }
