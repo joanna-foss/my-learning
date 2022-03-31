@@ -43,7 +43,7 @@ function animate() {
     background3.createBackground();
     shop.update();
     player.update();
-    enemy.update();
+    // enemy.update();
 
     player.velocity.x = 0;
     enemy.velocity.x = 0;

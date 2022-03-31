@@ -58,6 +58,15 @@ const player = new Fighter({
     offset: {
         x: 0,
         y: 0
+    },
+    height: 200,
+    width: 50,
+    img_src: "./img/heroSprite/Idle.png",
+    scale: 3,
+    frames: 10,
+    offset: {
+        x: 62,
+        y: 50
     }
 });
 

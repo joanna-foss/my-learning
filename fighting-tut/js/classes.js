@@ -11,7 +11,7 @@ class Background {
 }
 
 class Sprite {
-    constructor({position, img_src, width, height, scale = 1, frames = 1}) {
+    constructor({position, img_src, width, height, scale = 1, frames = 1, offset = {x: 0, y: 0}}) {
         this.position = position;
         this.height = height;
         this.width = width;
@@ -22,6 +22,7 @@ class Sprite {
         this.frameCurrent = 0;
         this.framesElapsed = 0;
         this.framesHold = 6;
+        this.offset = offset;
     }
 
     draw() {
@@ -31,16 +32,15 @@ class Sprite {
             0,
             this.img.width / this.frames,
             this.img.height,
-            this.position.x,
-            this.position.y,
+            this.position.x - this.offset.x,
+            this.position.y - this.offset.y,
             (this.img.width / this.frames) * this.scale,
             this.img.height * this.scale
         )
     }
 
-    update() {
-        this.draw();
-        this.framesElapsed++
+    animateFrames() {
+        this.framesElapsed++;
 
         if (this.framesElapsed % this.framesHold === 0) {
             if (this.frameCurrent < this.frames - 1) {
@@ -49,50 +49,61 @@ class Sprite {
                 this.frameCurrent = 0;
             }
         }
-
-    }
-}
-
-class Fighter {
-    constructor({position, velocity, color = 'white', offset}) {
-        this.position = position;
-        this.velocity = velocity;
-        this.lastKey;
-        this.height = 150;
-        this.width = 50;
-        this.weapon = {
-            position: {
-                x: this.position.x,
-                y: this.position.y
-            },
-            offset,
-            width: 100,
-            height: 30
-        };
-        this.color = color;
-        this.isAttacking;
-        this.health = 100;
-    }
-
-    draw() {
-        //characters
-        context.fillStyle = this.color;
-        context.fillRect(this.position.x, this.position.y, this.width, this.height);
-
-        //weapons
-        if(this.isAttacking) {
-            context.fillStyle = "green";
-            context.fillRect(
-                this.weapon.position.x,
-                this.weapon.position.y,
-                this.weapon.width,
-                this.weapon.height
-            )
-        }
     }
 
     update() {
         this.draw();
+        this.animateFrames();
+    }
+}
+
+class Fighter extends Sprite {
+    constructor({
+        position,
+        velocity,
+        color = 'white',
+        img_src,
+        width,
+        height,
+        scale = 1,
+        frames = 1,
+        offset = {x: 0, y: 0}
+    }) {
+            super({
+                position,
+                img_src,
+                scale,
+                frames, 
+                offset
+            });
+
+            this.position = position;
+            this.velocity = velocity;
+            this.lastKey;
+            this.height = height;
+            this.width = width;
+            this.weapon = {
+                position: {
+                    x: this.position.x,
+                    y: this.position.y
+                },
+                offset,
+                width: 100,
+                height: 30
+            };
+            this.color = color;
+            this.isAttacking;
+            this.health = 100;
+            
+            this.frameCurrent = 0;
+            this.framesElapsed = 0;
+            this.framesHold = 5;
+    }
+
+    update() {
+        this.draw();
+        this.animateFrames();
+
         this.weapon.position.x = this.position.x + this.weapon.offset.x; 
         this.weapon.position.y = this.position.y;
 
