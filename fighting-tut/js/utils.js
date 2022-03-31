@@ -49,10 +49,19 @@ function animate() {
     enemy.velocity.x = 0;
 
     //player movement
+    player.switchSprite("idle");
     if(keys.d.pressed && player.lastKey === "d") {
         player.velocity.x = 5;
+        player.switchSprite("run");
     } else if (keys.a.pressed && player.lastKey === "a") {
         player.velocity.x = -5;
+        player.switchSprite("run");
+    }
+
+    if(player.velocity.y < 0) {
+        player.switchSprite("down");
+    } else if (player.velocity.y > 0) {
+        player.switchSprite("up");
     }
 
     //enemy movement

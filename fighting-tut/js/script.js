@@ -67,6 +67,24 @@ const player = new Fighter({
     offset: {
         x: 62,
         y: 50
+    },
+    sprites: {
+        idle: {
+            img_src: "./img/heroSprite/Idle.png",
+            frames: 10
+        },
+        run: {
+            img_src: "./img/heroSprite/Run.png",
+            frames: 8
+        },
+        up: {
+            img_src: "./img/heroSprite/Going_Up.png",
+            frames: 3
+        },
+        down: {
+            img_src: "./img/heroSprite/Going_Down.png",
+            frames: 3
+        }
     }
 });
 
@@ -126,7 +144,10 @@ window.addEventListener('keydown', (event) => {
             keys.a.pressed = true;
             break;
         case "w":
-            player.velocity.y = -20;
+            if(player.velocity.y === 0) {
+                player.velocity.y = -20;
+            }
+            
             break;
         case " ":
             player.attack();
@@ -142,7 +163,9 @@ window.addEventListener('keydown', (event) => {
             break;
         case "ArrowUp":
             enemy.lastKey = "ArrowUp";
-            enemy.velocity.y = -20;
+            if(enemy.velocity.y === 0) {
+                enemy.velocity.y = -20;
+            }
             break;
         case "ArrowDown":
             enemy.attack();

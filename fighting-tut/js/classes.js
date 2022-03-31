@@ -67,7 +67,8 @@ class Fighter extends Sprite {
         height,
         scale = 1,
         frames = 1,
-        offset = {x: 0, y: 0}
+        offset = {x: 0, y: 0},
+        sprites
     }) {
             super({
                 position,
@@ -98,6 +99,12 @@ class Fighter extends Sprite {
             this.frameCurrent = 0;
             this.framesElapsed = 0;
             this.framesHold = 5;
+            this.sprites = sprites;
+
+            for(const sprite in this.sprites) {
+                sprites[sprite].img = new Image();
+                sprites[sprite].img.src = sprite.img_src;
+            }
     }
 
     update() {
@@ -114,6 +121,35 @@ class Fighter extends Sprite {
             this.velocity.y = 0;
         } else {
             this.velocity.y += gravity;
+        }
+    }
+
+    switchSprite(sprite) {
+        switch (sprite) {
+            case "idle": 
+                if(this.img.src !== this.sprites.idle.img_src) {
+                    this.img.src = player.sprites.idle.img_src;
+                    this.frames = player.sprites.idle.frames;
+                }
+                break;
+            case "run":
+                if(this.img.src !== this.sprites.run.img_src) {
+                    this.img.src = player.sprites.run.img_src;
+                    this.frames = player.sprites.run.frames;
+                }
+                break;
+            case "up":
+                if(this.img.src !== this.sprites.up.img_src) {
+                    this.img.src = player.sprites.up.img_src;
+                    this.frames = player.sprites.up.frames;
+                }
+                break;
+            case "down":
+                if(this.img.src !== this.sprites.down.img_src) {
+                    this.img.src = player.sprites.down.img_src;
+                    this.frames = player.sprites.down.frames;
+                }
+                break;
         }
     }
 
