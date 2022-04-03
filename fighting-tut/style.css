@@ -47,7 +47,8 @@
 }
 
 #timer {
-    background-color: green;
+    background-image: url("./img/smallboxframe.png");
+    background-size: contain;
     height: 100px;
     width: 100px;
     flex-shrink: 0;

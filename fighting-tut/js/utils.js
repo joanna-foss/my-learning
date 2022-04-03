@@ -1,7 +1,7 @@
 function decrementTimer() {
     document.querySelector("#timer").innerHTML = timer;
 
-    if(timer === 0) {
+    if(timer <= 0) {
         determineWinner({player, enemy, timerID});
     }
 
@@ -13,14 +13,21 @@ function decrementTimer() {
 
 function determineWinner({player, enemy, timerID}) {
     clearTimeout(timerID);
+    window.removeEventListener('keydown', keydowns);
+    window.removeEventListener('keyup', keyups);
+
+    //replace winner div display of none with flex to display the div
     let winner_div = document.querySelector("#winner");
     winner_div.style.display = "flex";
+
     if(player.health === enemy.health) {
         winner_div.innerHTML = "It's a tie!";
     } else if (player.health > enemy.health) {
         winner_div.innerHTML = "Player wins!";
+        enemy.dead();
     } else if (player.health < enemy.health) {
         winner_div.innerHTML = "Enemy wins!";
+        player.dead();
     }
 }
 
@@ -36,26 +43,25 @@ function weaponCollision({character1,character2}) {
 function animate() {
     window.requestAnimationFrame(animate) //recursively animate forever
 
-    context.fillStyle = "black";
-    context.fillRect(0,0,canvas.width, canvas.height);
     background1.createBackground();
     background2.createBackground();
     background3.createBackground();
     shop.update();
     player.update();
-    // enemy.update();
+    enemy.update();
 
     player.velocity.x = 0;
     enemy.velocity.x = 0;
 
     //player movement
-    player.switchSprite("idle");
     if(keys.d.pressed && player.lastKey === "d") {
         player.velocity.x = 5;
         player.switchSprite("run");
     } else if (keys.a.pressed && player.lastKey === "a") {
         player.velocity.x = -5;
         player.switchSprite("run");
+    } else {
+        player.switchSprite("idle");
     }
 
     if(player.velocity.y < 0) {
@@ -65,33 +71,119 @@ function animate() {
     }
 
     //enemy movement
+    if(enemy.position.y > 400) {
+        enemy.position.y = 400;
+    }
     if(keys.ArrowRight.pressed && enemy.lastKey === "ArrowRight") {
         enemy.velocity.x = 5;
+        enemy.switchSprite("run");
     } else if (keys.ArrowLeft.pressed && enemy.lastKey === "ArrowLeft") {
         enemy.velocity.x = -5;
+        enemy.switchSprite("run");
+    } else {
+        enemy.switchSprite("idle");
     }
 
-    //detect hit
+    //detect hit by player
     if(
         weaponCollision({character1: player, character2: enemy}) &&
-        player.isAttacking) {
+        player.isAttacking &&
+        player.frameCurrent == 5) {
             player.isAttacking = false;
-            console.log("player hit enemy!");
-            enemy.health -= 10;
+            enemy.takeHit();
             let enemy_health = document.querySelector("#enemy-life-bar");
             enemy_health.style.width = enemy.health + "%";
     } 
+    //detect miss
+    if(player.isAttacking && player.frameCurrent == 5) {
+        player.isAttacking = false;
+    }
+
+    //reset player taking hit
+    if(player.takingHit && player.frameCurrent == 2) {
+        player.takingHit = false;
+    }
+
+    //detect hit by enemy
     if(
         weaponCollision({character1: enemy, character2: player}) &&
-        enemy.isAttacking) {
+        enemy.isAttacking &&
+        enemy.frameCurrent == 2) {
             enemy.isAttacking = false;
-            console.log("enemy hit player!");
-            player.health -= 10;
+            player.takeHit();
             let player_health = document.querySelector("#player-life-bar");
             player_health.style.width = player.health + "%";
     } 
+    //detect miss
+    if(enemy.isAttacking && enemy.frameCurrent == 5) {
+        enemy.isAttacking = false;
+    }
+
+    //reset enemy taking hit
+    if(enemy.takingHit && enemy.frameCurrent == 2) {
+        enemy.takingHit = false;
+    }
 
     if(player.health <= 0 || enemy.health <= 0) {
         determineWinner({player, enemy, timerID});
+    }
+}
+
+function keydowns(event) {
+    console.log(event.key);
+    switch(event.key) {
+        case "d":
+            player.lastKey = "d";
+            keys.d.pressed = true;
+            break;
+        case "a":
+            player.lastKey = "a";
+            keys.a.pressed = true;
+            break;
+        case "w":
+            if(player.velocity.y === 0) {
+                player.velocity.y = -20;
+            }
+            
+            break;
+        case " ":
+            if(!player.takingHit) player.attack();
+            break;
+        //enemy keys
+        case "ArrowRight":
+            keys.ArrowRight.pressed = true;
+            enemy.lastKey = "ArrowRight";
+            break;
+        case "ArrowLeft":
+            keys.ArrowLeft.pressed = true;
+            enemy.lastKey = "ArrowLeft";
+            break;
+        case "ArrowUp":
+            enemy.lastKey = "ArrowUp";
+            if(enemy.velocity.y === 0) {
+                enemy.velocity.y = -20;
+            }
+            break;
+        case "ArrowDown":
+            if (!enemy.takingHit) enemy.attack();
+            break;
+    }
+}
+
+function keyups(event) {
+    console.log(event.key);
+    switch(event.key) {
+        case "d":
+            keys.d.pressed = false;
+            break;
+        case "a":
+            keys.a.pressed = false;
+            break;
+        case "ArrowRight":
+            keys.ArrowRight.pressed = false;
+            break;
+        case "ArrowLeft":
+            keys.ArrowLeft.pressed = false;
+            break;
     }
 }

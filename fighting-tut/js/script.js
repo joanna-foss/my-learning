@@ -7,6 +7,7 @@ canvas.height = 576;
 
 context.fillRect(0,0, canvas.width, canvas.height);
 
+//how fast sprite falls when in the air
 const gravity = 0.6;
 
 //ENVIRONMENT
@@ -47,25 +48,25 @@ const shop = new Sprite({
 //CHARACTERS
 const player = new Fighter({
     position: {
-        x: 0,
+        x: 200,
         y: 0
     },
     velocity: {
         x: 0,
         y: 0
     },
-    color: "blue",
     offset: {
         x: 0,
         y: 0
     },
+    color: "blue",
     height: 200,
-    width: 50,
+    width: 80,
     img_src: "./img/heroSprite/Idle.png",
     scale: 3,
     frames: 10,
     offset: {
-        x: 62,
+        x: 160,
         y: 50
     },
     sprites: {
@@ -84,7 +85,27 @@ const player = new Fighter({
         down: {
             img_src: "./img/heroSprite/Going_Down.png",
             frames: 3
+        },
+        attack1: {
+            img_src: "./img/heroSprite/Attack1.png",
+            frames: 7
+        },
+        takeHit: {
+            img_src: "./img/heroSprite/Take_Hit.png",
+            frames: 3
+        },
+        death: {
+            img_src: "./img/heroSprite/Death.png",
+            frames: 11
         }
+    },
+    weapon: {
+        offset: {
+            x: 75,
+            y: 100
+        },
+        width: 130,
+        height: 40
     }
 });
 
@@ -101,6 +122,53 @@ const enemy = new Fighter({
     offset: {
         x: -50,
         y: 0
+    },
+    height: 200,
+    width: 65,
+    img_src: "./img/wormSprite/Worm/Idle.png",
+    scale: 3,
+    frames: 9,
+    offset: {
+        x: 80,
+        y: -23
+    },
+    sprites: {
+        idle: {
+            img_src: "./img/wormSprite/Worm/Idle.png",
+            frames: 9
+        },
+        run: {
+            img_src: "./img/wormSprite/Worm/Walk.png",
+            frames: 9
+        },
+        up: {
+            img_src: "./img/wormSprite/Worm/Walk.png",
+            frames: 3
+        },
+        down: {
+            img_src: "./img/wormSprite/Worm/Walk.png",
+            frames: 3
+        },
+        attack1: {
+            img_src: "./img/wormSprite/Worm/Attack.png",
+            frames: 16
+        },
+        takeHit: {
+            img_src: "./img/wormSprite/Worm/Get_Hit.png",
+            frames: 3
+        },
+        death: {
+            img_src: "./img/wormSprite/Worm/Death.png",
+            frames: 8
+        }
+    },
+    weapon: {
+        offset: {
+            x: -60,
+            y: 120
+        },
+        width: 130,
+        height: 40
     }
 });
 
@@ -125,68 +193,13 @@ const keys = {
     }
 }
 
-let timer = 5;
+let timer = 6;
 let timerID;
 
 decrementTimer();
 
 animate();
 
-window.addEventListener('keydown', (event) => {
-    console.log(event.key);
-    switch(event.key) {
-        case "d":
-            player.lastKey = "d";
-            keys.d.pressed = true;
-            break;
-        case "a":
-            player.lastKey = "a";
-            keys.a.pressed = true;
-            break;
-        case "w":
-            if(player.velocity.y === 0) {
-                player.velocity.y = -20;
-            }
-            
-            break;
-        case " ":
-            player.attack();
-            break;
-        //enemy keys
-        case "ArrowRight":
-            keys.ArrowRight.pressed = true;
-            enemy.lastKey = "ArrowRight";
-            break;
-        case "ArrowLeft":
-            keys.ArrowLeft.pressed = true;
-            enemy.lastKey = "ArrowLeft";
-            break;
-        case "ArrowUp":
-            enemy.lastKey = "ArrowUp";
-            if(enemy.velocity.y === 0) {
-                enemy.velocity.y = -20;
-            }
-            break;
-        case "ArrowDown":
-            enemy.attack();
-            break;
-    }
-});
+window.addEventListener('keydown', keydowns);
 
-window.addEventListener('keyup', (event) => {
-    console.log(event.key);
-    switch(event.key) {
-        case "d":
-            keys.d.pressed = false;
-            break;
-        case "a":
-            keys.a.pressed = false;
-            break;
-        case "ArrowRight":
-            keys.ArrowRight.pressed = false;
-            break;
-        case "ArrowLeft":
-            keys.ArrowLeft.pressed = false;
-            break;
-    }
-});
+window.addEventListener('keyup', keyups);
